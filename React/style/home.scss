@@ -1,0 +1,57 @@
+// VARIABLES
+$imgWidth: 550px;
+$imgHeight: 500px;
+
+// IDs
+#artCodeImgContainer-outer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  position: relative;
+}
+
+#artCodeImgContainer-inner {
+  height: $imgHeight;
+  width: $imgWidth;
+}
+
+#artHalfImg {
+  position:absolute;
+  z-index: 0;
+  height: $imgHeight;
+
+  animation-name: slideFromLeft;
+  animation-duration: 1s;
+}
+
+#codeHalfImg {
+  position:absolute;
+  z-index: 1;
+  height: $imgHeight;
+
+  animation-name: slideFromRight;
+  animation-duration: 1s;
+}
+
+// ANIMATION
+@keyframes slideFromLeft {
+  from {
+    left: -600px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    right: -600px;
+  }
+  to {
+    right: 0;
+  }
+}
